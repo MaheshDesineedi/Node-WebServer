@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+
+
 var app = express();
 
 const port = process.env.PORT || 3000;
@@ -62,6 +64,12 @@ app.get('/about',(req, res) =>{
 app.get('/bad',(req, res) =>{
 	res.send({
 		errmsg: 'Unable to connect '
+	});
+});
+
+app.get('/projects',(req,res) => {
+	res.render('projects.hbs',{
+		pageTitle: 'Projects'
 	});
 });
 
